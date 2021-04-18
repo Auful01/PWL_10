@@ -24,5 +24,6 @@ use Illuminate\Http\Request;
 Route::resource('mahasiswa', MahasiswaController::class);
 Route::get('search',[PostsController::class,'search']);
 Route::get('mahasiswa/nilai/{nim}', [MahasiswaController::class,'nilai'])->name('mahasiswa.nilai');
+Route::get('mahasiswa/nilai/{nim}/cetak_pdf', [MahasiswaController::class,'cetak_pdf'])->name('mahasiswa.cetak_pdf');
 Route::resource('articles', ArticleController::class);
 Route::get('/article/cetak_pdf',[ArticleController::class,'cetak_pdf']);
