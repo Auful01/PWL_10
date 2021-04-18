@@ -28,6 +28,7 @@
      <tr>
          <th>Nim</th>
          <th>Nama</th>
+         <th>Foto</th>
          <th>Email</th>
          <th>Tanggal Lahir</th>
          <th>Kelas</th>
@@ -40,6 +41,12 @@
     <tr>
         <td>{{ $mahasiswa->nim }}</td>
         <td>{{ $mahasiswa->nama }}</td>
+        <td>
+            @if ($mahasiswa->foto == null || '')
+                <a href="{{ route('mahasiswa.edit',$mahasiswa->nim) }}" class="flex btn btn-light" align="center">UPLOAD FOTO</a>
+            @else
+                <img width="150px" src="{{asset('storage/'.$mahasiswa->foto)}}"></td>
+            @endif
         <td>{{ $mahasiswa->email}}</td>
         <td>{{ $mahasiswa->tanggal_lahir}}</td>
         <td>{{ $mahasiswa->kelas->nama_kelas }}</td>
